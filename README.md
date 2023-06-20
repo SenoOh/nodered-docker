@@ -5,7 +5,7 @@
 ### インストール
 1. ダウンロード
 ```bash
-$ git clone https://github.com/miyake13000/openhab-docker.git
+$ git clone https://github.com/SenoOh/nodered-docker.git
 ```
 2. コンテナイメージ作成
 ```bash

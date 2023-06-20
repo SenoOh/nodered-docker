@@ -5,7 +5,7 @@
 
 # default value
 DEFAULT_ATTACH_OPTION=it # {i|t|it|d}
-DEFAULT_PORT=1890 # host port which container binds
+DEFAULT_PORT=1880 # host port which container binds
 DEFAULT_COMMAND="" # command which execute in container
                    # using default entrypoint of image, specify ""
 DEFAULT_IMAGE_NAME=nodered/node-red:3.0.2
