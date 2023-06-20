@@ -9,7 +9,7 @@ $ git clone https://github.com/SenoOh/nodered-docker.git
 ```
 2. コンテナイメージ作成
 ```bash
-$ docker build -t nodered/node-red:3.0.2 nodered-docker
+$ docker build -t nodered-docker .
 ```
 
 ### Node-RED の管理
