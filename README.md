@@ -1,0 +1,73 @@
+# Node-RED server using docker
+
+## 使い方
+
+### インストール
+1. ダウンロード
+```bash
+$ git clone https://github.com/miyake13000/openhab-docker.git
+```
+2. コンテナイメージ作成
+```bash
+$ docker build -t nodered/node-red:3.0.2 nodered-docker
+```
+
+### Node-RED の管理
+#### スクリプトを用いる方法
+1. 起動
+```shell
+$ ./launch.sh start
+```
+2. 起動 (バックグラウンドで動作させる場合)
+```shell
+$ ./launch.sh start -d
+```
+3. 起動 (ポートを指定する場合)
+```shell
+$ ./launch.sh start -p 80
+```
+4. 停止
+```shell
+$ ./launch.sh stop
+```
+5. 再起動
+```shell
+$ ./launch.sh restart -d -p 80
+```
+6. ステータス確認
+```shell
+$ ./launch.sh status
+```
+
+より詳細な使い方については以下のコマンドを実行
+```shell
+$ ./launch.sh help
+```
+
+#### systemd を用いる手法
++ 事前準備
+    1. `systemd_conf/nodered.service` を `/etc/systemd/system` にコピー
+    ```shell
+    # cp systemd_conf/nodered.service /etc/systemd/system/
+    ```
+    2. コピーした `nodered.service` を書き換える
+    ```shell
+    # vim /etc/systemd/system/nodered.service
+    ```
++ 管理
+    + 起動
+    ```shell
+    # systemctl start nodered.service
+    ```
+    + 停止
+    ```shell
+    # systemctl stop nodered.service
+    ```
+    + ステータス確認
+    ```shell
+    # systemctl status nodered.service
+    ```
+    + 自動起動
+    ```shell
+    # systemctl enable nodered.serive
+    ```
